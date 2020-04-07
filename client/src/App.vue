@@ -17,12 +17,12 @@ export default {
       categoriesclass: '',
       contentClass: '',
       slide: 0,
-      sliding: null
+      sliding: null,
     }
   },
   components: {
     Navbar,
-    Footer
+    Footer,
   },
   computed: {
     products() {
@@ -30,7 +30,10 @@ export default {
     },
     categories() {
       return this.$store.state.categories
-    }
-  }
+    },
+  },
+  mounted() {
+    this.$store.dispatch('getProducts')
+  },
 }
 </script>

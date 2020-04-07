@@ -18,7 +18,7 @@
             <div class="product-postion">
               <b-card class="card-postion">
                 <img
-                  :src="product.pics"
+                  :src="product.images[0]"
                   style="width: 100%; margin-bottom: 1rem;"
                 />
                 <div class="text-left">
@@ -94,8 +94,9 @@
 import { mapState } from 'vuex'
 export default {
   computed: {
-    ...mapState(['products'])
-  }
+    ...mapState(['products']),
+  },
+  methods: {},
 }
 </script>
 <style scoped>

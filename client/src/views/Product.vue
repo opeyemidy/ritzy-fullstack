@@ -16,7 +16,7 @@
                     <b-img
                       thumbnail
                       fluid
-                      :src="product.pics"
+                      :src="product.images[0]"
                       alt="Image 1"
                     ></b-img>
                     <div class="custom-thumb">
@@ -172,13 +172,13 @@
             </b-col>
           </b-row>
           <b-row class="mb-3">
-            <b-col cols="12" v-if="product.specification">
+            <b-col cols="12" v-if="product.Specifications">
               <b-card>
                 <h5 class="custom-card-title">Specification</h5>
                 <hr />
                 <b-row>
                   <b-col
-                    v-for="item in product.specification"
+                    v-for="item in product.Specifications"
                     :key="item.heading"
                     lg="6"
                     md="6"
@@ -337,14 +337,15 @@ export default {
   data() {
     return {
       productItem: [],
-    };
+    }
   },
 
   computed: {},
   created() {
     this.productItem = this.$store.state.products.filter((item) => {
-      return item.id === parseInt(this.$route.params.id);
-    });
+      return item.id === parseInt(this.$route.params.id)
+      // console.log(this.productItem)
+    })
   },
   // beforeRouteEnter(to, from, next) {
   //   if ($route.params.id) {
@@ -366,5 +367,5 @@ export default {
   //     next(false)
   //   }
   // }
-};
+}
 </script>

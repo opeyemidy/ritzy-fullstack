@@ -121,7 +121,7 @@
                       <a :href="`/product/${product.id}`" class="product-link">
                         <b-card>
                           <img
-                            :src="product.pics"
+                            :src="product.images[0]"
                             style="width: 100%; margin-bottom: 1rem;"
                           />
                           <div class="text-left">
@@ -155,7 +155,7 @@
                       <a @click="gotoProduct(product)" class="product-link">
                         <b-card>
                           <img
-                            :src="product.pics"
+                            :src="product.images[0]"
                             style="width: 100%; margin-bottom: 1rem;"
                           />
                           <div class="text-left">
@@ -189,7 +189,7 @@
                       <a @click="gotoProduct(product)" class="product-link">
                         <b-card>
                           <img
-                            :src="product.pics"
+                            :src="product.images[0]"
                             style="width: 100%; margin-bottom: 1rem;"
                           />
                           <div class="text-left">
@@ -462,18 +462,18 @@ export default {
       contentClass: '',
       slide: 0,
       sliding: null,
-      smallScreen: true
+      smallScreen: true,
     }
   },
   components: {
     Navbar,
-    Footer
+    Footer,
   },
   computed: {
     ...mapState(['categories']),
     products() {
       return this.$store.getters.filterProducts
-    }
+    },
   },
   methods: {
     onResize() {
@@ -488,7 +488,7 @@ export default {
     },
     onSlideEnd(slide) {
       this.sliding = false
-    }
+    },
   },
   created() {
     window.addEventListener('resize', this.onResize)
@@ -500,8 +500,8 @@ export default {
   watch: {
     $route(to, from) {
       console.log('route switched')
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

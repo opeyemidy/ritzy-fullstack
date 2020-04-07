@@ -1,5 +1,5 @@
 export default {
-  // productFiltered(state) {
-  //   state.filteredProduct = state.products.splice(0, 3)
-  // }
+  SET_PRODUCTS(state, products) {
+    state.products = products
+  },
 }
