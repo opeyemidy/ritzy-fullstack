@@ -2,7 +2,9 @@
   <div class="category">
     <b-container>
       <b-row>
-        <b-col cols="12"><h3>Heading</h3></b-col>
+        <b-col cols="12"
+          ><h3>{{ this.$route.params.link }}</h3></b-col
+        >
       </b-row>
       <hr />
       <b-row>
@@ -10,7 +12,7 @@
           lg="3"
           md="4"
           cols="6"
-          v-for="product in products"
+          v-for="product in catProducts"
           :key="product.name"
           class="p-0 px-2 pb-3 mb-5"
         >
@@ -95,6 +97,9 @@ import { mapState } from 'vuex'
 export default {
   computed: {
     ...mapState(['products']),
+    catProducts() {
+      return this.$store.getters.getCategoryByLink(this.$route.params.link)
+    },
   },
   methods: {},
 }

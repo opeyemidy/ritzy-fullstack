@@ -23,12 +23,12 @@
                   <b-list-group-item
                     style="border: none; font-size: 16px; padding: 0.3rem 1.25rem ;"
                     v-for="item in categories"
-                    :key="item.title"
-                    :href="`/category/${item.title}`"
+                    :key="item.id"
+                    :href="`/category/${item.link}`"
                     class="h5"
                   >
                     <!-- <span><b-icon icon="alert-triangle"></b-icon></span> -->
-                    {{ item.title }}
+                    {{ item.name }}
                   </b-list-group-item>
                 </b-list-group>
               </b-card>
@@ -152,7 +152,7 @@
                       :key="product.name"
                       class="p-0 px-3 pb-3"
                     >
-                      <a @click="gotoProduct(product)" class="product-link">
+                      <a :href="`/product/${product.id}`" class="product-link">
                         <b-card>
                           <img
                             :src="product.images[0]"
@@ -186,7 +186,7 @@
                       :key="product.name"
                       class="p-0 px-3 pb-3"
                     >
-                      <a @click="gotoProduct(product)" class="product-link">
+                      <a :href="`/product/${product.id}`" class="product-link">
                         <b-card>
                           <img
                             :src="product.images[0]"

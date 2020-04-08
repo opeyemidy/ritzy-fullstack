@@ -149,8 +149,8 @@ export default {
             'How to shop on Ritzy',
             'Delivery options and timelines',
             'How to return a product on Ritzy',
-            'Corporate and bulk purchases'
-          ]
+            'Corporate and bulk purchases',
+          ],
         },
         {
           heading: 'ABOUT RITZY',
@@ -161,8 +161,8 @@ export default {
             'Privacy policy',
             'Tech Week',
             'Ritzy Prime',
-            'Stay Safe'
-          ]
+            'Stay Safe',
+          ],
         },
         {
           heading: 'MAKE MONEY WITH RITZY',
@@ -171,21 +171,21 @@ export default {
             'Become an Affiliate Partner',
             'Become a Sales Consultant',
             'Become a Ritzy Vendor Service Provider',
-            'Become a Logistics Service Partner'
-          ]
-        }
+            'Become a Logistics Service Partner',
+          ],
+        },
       ],
       lastlist: [
         {
           heading: 'RITZY INTERNATIONAL',
           items: [
             ['Algeria', 'Egypt', 'Ghana', 'Ivory Coast', 'Kenya', 'Morocco'],
-            ['Senegal', 'Tunisia', 'Uganda', 'South Africa', 'Zando']
-          ]
-        }
-      ]
+            ['Senegal', 'Tunisia', 'Uganda', 'South Africa', 'Zando'],
+          ],
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 <style scoped>

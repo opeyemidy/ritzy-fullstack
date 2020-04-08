@@ -1,9 +1,12 @@
 <template>
   <div class="product">
+    <!-- {{ productDetails }} <br /> -->
+    <!-- {{ productItem }} -->
+
     <b-container
       fluid
       class="container-color px-0"
-      v-for="product in productItem"
+      v-for="product in productDetails"
       :key="product.id"
     >
       <b-row class="remove-row-margin custom-row-w mx-auto">
@@ -21,7 +24,10 @@
                     ></b-img>
                     <div class="custom-thumb">
                       <div class="thumbholder">
-                        <b-row class="thumb-custom-p m-0">
+                        <b-row
+                          class="thumb-custom-p m-0"
+                          v-if="product.images.length > 1"
+                        >
                           <b-col
                             v-for="(image, index) in product.images"
                             :key="index"
@@ -32,7 +38,7 @@
                         </b-row>
                       </div>
                     </div>
-                    <hr />
+                    <hr v-if="product.images.length > 1" />
                     <h5 class="custom-card-title">share this product</h5>
                     <div class="product-social-page">
                       <a href="">
@@ -102,7 +108,7 @@
                     <hr />
                     <div>₦ {{ product.price }}</div>
                     <strike>₦ 7,650 - ₦ 7,890</strike>
-                    <div v-if="product.size">
+                    <div v-if="product.size !== null">
                       <hr class="mb-1" />
                       <div
                         class="d-flex align-items-center justify-content-between"
@@ -337,11 +343,20 @@ export default {
   data() {
     return {
       productItem: [],
+      ProductId: null,
     }
   },
 
-  computed: {},
+  computed: {
+    productDetails() {
+      let productValue = this.$store.getters.getProductById(this.ProductId)
+      let productValueArray = []
+      productValueArray.push(productValue)
+      return productValueArray
+    },
+  },
   created() {
+    this.ProductId = parseInt(this.$route.params.id)
     this.productItem = this.$store.state.products.filter((item) => {
       return item.id === parseInt(this.$route.params.id)
       // console.log(this.productItem)

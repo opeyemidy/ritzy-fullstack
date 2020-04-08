@@ -33,6 +33,7 @@ export default {
     },
   },
   mounted() {
+    this.$store.dispatch('getCategories')
     this.$store.dispatch('getProducts')
   },
 }

@@ -13,9 +13,9 @@
             <b-nav-item-dropdown text="Categories" right>
               <b-dropdown-item
                 v-for="category in categories"
-                :key="category.title"
-                href="#"
-                >{{ category.title }}</b-dropdown-item
+                :key="category.id"
+                :href="`/category/${category.link}`"
+                >{{ category.name }}</b-dropdown-item
               >
             </b-nav-item-dropdown>
           </div>
@@ -61,16 +61,16 @@
 <script>
 export default {
   props: {
-    categories: Array
+    categories: Array,
   },
   data() {
     return {
       mainProps: {
         width: 20,
         height: 20,
-        class: 'm1'
-      }
+        class: 'm1',
+      },
     }
-  }
+  },
 }
 </script>

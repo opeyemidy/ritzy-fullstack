@@ -30,16 +30,16 @@ module.exports = (sequelize, DataTypes) => {
     {
       timestamps: false,
     }
-  );
+  )
   Product.associate = (models) => {
     Product.belongsTo(models.Category, {
       foreignKey: {
         allowNull: false,
       },
-    });
+    })
     Product.hasMany(models.Specification, {
       onDelete: 'cascade',
-    });
-  };
-  return Product;
-};
+    })
+  }
+  return Product
+}

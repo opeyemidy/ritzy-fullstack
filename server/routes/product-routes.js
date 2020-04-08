@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const db = require('../models');
+const express = require('express')
+const router = express.Router()
+const db = require('../models')
 
 router.post('/new', (req, res) => {
   db.Product.create({
@@ -10,24 +10,26 @@ router.post('/new', (req, res) => {
     details: req.body.details,
     images: req.body.images,
     CategoryId: req.body.catid,
-  }).then((newProduct) => res.send(newProduct));
-});
+  }).then((newProduct) => res.send(newProduct))
+})
 router.get('/all', (req, res) => {
   db.Product.findAll({
     include: [db.Specification],
   }).then((allProducts) => {
     allProducts.forEach((product) => {
-      let sizeArray = product.size.split(',');
-      product.size = sizeArray;
-      let imageArray = product.images.split(',');
-      product.images = imageArray;
+      if (product.size) {
+        let sizeArray = product.size.split(',')
+        product.size = sizeArray
+      }
+      let imageArray = product.images.split(',')
+      product.images = imageArray
       product.Specifications.forEach((item) => {
-        let listArray = item.list.split(',');
-        item.list = listArray;
-      });
-    });
-    res.send(allProducts);
-  });
-});
+        let listArray = item.list.split(',')
+        item.list = listArray
+      })
+    })
+    res.send(allProducts)
+  })
+})
 
-module.exports = router;
+module.exports = router

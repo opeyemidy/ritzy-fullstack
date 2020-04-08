@@ -11,17 +11,17 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
     path: '/about',
     name: 'About',
-    component: About
+    component: About,
   },
   {
     path: '/product/:id',
     name: 'Product',
-    component: Product
+    component: Product,
   },
   {
     path: '/product',
@@ -29,19 +29,19 @@ const routes = [
     component: Product,
     beforeEnter: (to, from, next) => {
       next('/')
-    }
+    },
   },
   {
-    path: '/category',
+    path: '/category/:link',
     name: 'Category',
-    component: Category
-  }
+    component: Category,
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
 })
 
 export default router
