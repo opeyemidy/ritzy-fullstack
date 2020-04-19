@@ -79,9 +79,17 @@
                 </div>
                 <div class="buy-btn">
                   <div class="d-flex justify-content-center my-3">
-                    <b-button class="" size="sm" variant="danger"
+                    <b-button
+                      v-b-modal.modal-center
+                      class=""
+                      size="sm"
+                      variant="danger"
                       >BUY NOW</b-button
                     >
+
+                    <b-modal id="modal-center" centered title="BootstrapVue">
+                      <p class="my-4">Vertically centered modal!</p>
+                    </b-modal>
                   </div>
                 </div>
               </b-card>
@@ -97,11 +105,15 @@ import { mapState } from 'vuex'
 export default {
   computed: {
     ...mapState(['products']),
+
+    // catName() {
+    //   return this.$store.getters.getCategoryByName(this.$route.params.link)
+    // },
     catProducts() {
       return this.$store.getters.getCategoryByLink(this.$route.params.link)
-    },
+    }
   },
-  methods: {},
+  methods: {}
 }
 </script>
 <style scoped>
@@ -138,6 +150,9 @@ export default {
 }
 .product-link:hover .card-postion {
   z-index: 999;
+  outline: #b7bbb7 solid 2px;
+  border: 1px solid #fff;
+  border-radius: none;
 }
 .product-postion {
   position: relative;

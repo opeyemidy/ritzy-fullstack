@@ -57,8 +57,7 @@
                       alt="image slot"
                     />
                   </template>
-                  ></b-carousel-slide
-                >
+                </b-carousel-slide>
 
                 <!-- Slides with custom text -->
                 <b-carousel-slide>

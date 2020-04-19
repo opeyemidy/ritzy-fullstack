@@ -15,7 +15,7 @@
             <b-col cols="12">
               <b-card class="remove-p-card-body mt-5">
                 <b-row class="remove-row-margin px-3 pt-3 pb-0">
-                  <b-col lg="4" md="6" sm="12" class="p-0 image-fit">
+                  <b-col lg="4" md="6" sm="12" class="p-0 pb-3 image-fit">
                     <b-img
                       thumbnail
                       fluid
@@ -178,7 +178,7 @@
             </b-col>
           </b-row>
           <b-row class="mb-3">
-            <b-col cols="12" v-if="product.Specifications">
+            <b-col cols="12" v-if="product.Specifications.length !== 0">
               <b-card>
                 <h5 class="custom-card-title">Specification</h5>
                 <hr />
@@ -217,7 +217,18 @@
               <b-card>
                 <h5 class="custom-card-title">Customers Feedback</h5>
                 <hr />
-                <p>
+                <div class="d-flex justify-content-center">
+                  <div>
+                    <div class="text-center for-no-rating">
+                      <img
+                        src="https://www.jumia.com.ng/assets_he/images/no-feedback.6c5fb8ec.svg"
+                        alt=""
+                      />
+                    </div>
+                    <p><b>This product has no rating yet</b></p>
+                  </div>
+                </div>
+                <!-- <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Explicabo sequi dolor optio distinctio, cumque blanditiis
                   corporis nam qui maxime dolore, facere, eligendi quisquam rem
@@ -236,28 +247,127 @@
                   debitis porro voluptatem omnis rerum, a est laudantium vel ut
                   sapiente quis, voluptas repellat expedita nisi? Numquam eos
                   libero eligendi cum veniam optio odio repellendus eaque.
-                </p>
+                </p> -->
               </b-card>
             </b-col>
           </b-row>
         </b-col>
         <b-col cols="3" class="px-0 mb-5 d-none d-lg-block">
-          <b-card class="remove-p-card-body p-3 mt-5"
-            >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
-            cumque commodi eveniet vel dolorum quae rerum in ut atque aliquam
-            enim dolor officiis, rem, ullam et eius quisquam quasi harum. Id,
-            laudantium, vero atque quis laborum, modi accusantium quibusdam
-            cupiditate voluptates facere quod. Sint ipsa dolore beatae quia,
-            aperiam minima, velit porro possimus labore numquam totam quaerat
-            voluptatum modi assumenda! Cumque, earum reiciendis! Quis dolor
-            minima quam incidunt facilis, sequi veritatis nostrum est mollitia
-            quas odit. Omnis ut unde, impedit a aperiam iste laudantium! Aliquam
-            obcaecati deserunt voluptas officia asperiores? Nobis itaque quos
-            est voluptatem magni deleniti qui. Inventore ipsum iusto adipisci
-            dolor consequuntur tempora, dolorum quibusdam dicta, a animi alias
-            eius voluptas dolore odit, saepe cum consequatur dolorem
-            enim.</b-card
+          <b-card
+            class="remove-p-card-body card-curve-edges px-2 pb-0 pt-3 mt-5"
           >
+            <b-container fluid>
+              <b-row class="align-items-start">
+                <b-col cols="2" class="px-0">
+                  <div
+                    style="border: 1px solid #ededed; border-radius: 4px;"
+                    class="text-center px-1 py-2"
+                  >
+                    <font-awesome-layers
+                      full-width
+                      class=""
+                      style="font-size: 1rem; color: #4d4a4a;"
+                    >
+                      <font-awesome-icon icon="paper-plane" />
+                    </font-awesome-layers>
+                  </div>
+                </b-col>
+                <b-col cols="10" class="px-0 pl-1"
+                  ><h6
+                    class="mb-0 banner-right-title"
+                    style="margin-top: -2px;"
+                  >
+                    RITZY EXPRESS
+                  </h6>
+
+                  <p class="banner-right-content">
+                    Express delivery in main cities. Details
+                  </p></b-col
+                >
+              </b-row>
+              <b-row class="align-items-start">
+                <b-col cols="2" class="px-0">
+                  <div
+                    style="border: 1px solid #ededed; border-radius: 4px;"
+                    class="text-center px-1 py-2"
+                  >
+                    <font-awesome-layers
+                      full-width
+                      class=""
+                      style="font-size: 1rem; color: #4d4a4a;"
+                    >
+                      <font-awesome-icon icon="truck-moving" />
+                    </font-awesome-layers>
+                  </div>
+                </b-col>
+                <b-col cols="10" class="px-0 pl-1"
+                  ><h6
+                    class="mb-0 banner-right-title"
+                    style="margin-top: -2px;"
+                  >
+                    Delivery Information
+                  </h6>
+                  <p class="banner-right-content">
+                    Normally delivered between Tuesday 14 Apr and Wednesday 15
+                    Apr. Please check exact dates in the Checkout page.See more
+                  </p></b-col
+                >
+              </b-row>
+              <b-row class="align-items-start">
+                <b-col cols="2" class="px-0">
+                  <div
+                    style="border: 1px solid #ededed; border-radius: 4px;"
+                    class="text-center px-1 py-2"
+                  >
+                    <font-awesome-layers
+                      full-width
+                      class=""
+                      style="font-size: 1rem; color: #4d4a4a;"
+                    >
+                      <font-awesome-icon icon="box" />
+                    </font-awesome-layers>
+                  </div>
+                </b-col>
+                <b-col cols="10" class="px-0 pl-1"
+                  ><h6
+                    class="mb-0 banner-right-title"
+                    style="margin-top: -2px;"
+                  >
+                    Return Policy
+                  </h6>
+                  <p class="banner-right-content">
+                    Free return within 15 days for Jumia Mall items and 7 days
+                    for other eligible items.See more
+                  </p></b-col
+                >
+              </b-row>
+              <b-row class="align-items-start">
+                <b-col cols="2" class="px-0">
+                  <div
+                    style="border: 1px solid #ededed; border-radius: 4px;"
+                    class="text-center px-1 py-2"
+                  >
+                    <font-awesome-layers
+                      full-width
+                      class=""
+                      style="font-size: 1rem; color: #4d4a4a;"
+                    >
+                      <font-awesome-icon icon="user-shield" />
+                    </font-awesome-layers>
+                  </div>
+                </b-col>
+                <b-col cols="10" class="px-0 pl-1"
+                  ><h6
+                    class="mb-0 banner-right-title"
+                    style="margin-top: -2px;"
+                  >
+                    Warranty
+                  </h6>
+                  <p class="banner-right-content">N/A</p></b-col
+                >
+              </b-row>
+            </b-container>
+          </b-card>
         </b-col>
       </b-row>
     </b-container>
@@ -265,7 +375,7 @@
 </template>
 <style scoped>
 .product {
-  margin-top: 62px;
+  margin-top: 56px;
 }
 .image-fit img {
   width: 100%;
@@ -336,6 +446,18 @@
 .spec-list li {
   list-style: none;
 }
+.for-no-rating img {
+  width: 100px;
+}
+.banner-right-title {
+  font-size: 0.875rem;
+}
+.banner-right-content {
+  font-size: 0.875rem;
+}
+.card-curve-edges {
+  border-radius: 5px;
+}
 </style>
 <script>
 export default {
@@ -343,7 +465,7 @@ export default {
   data() {
     return {
       productItem: [],
-      ProductId: null,
+      ProductId: null
     }
   },
 
@@ -353,15 +475,15 @@ export default {
       let productValueArray = []
       productValueArray.push(productValue)
       return productValueArray
-    },
+    }
   },
   created() {
     this.ProductId = parseInt(this.$route.params.id)
-    this.productItem = this.$store.state.products.filter((item) => {
+    this.productItem = this.$store.state.products.filter(item => {
       return item.id === parseInt(this.$route.params.id)
       // console.log(this.productItem)
     })
-  },
+  }
   // beforeRouteEnter(to, from, next) {
   //   if ($route.params.id) {
   //     next()
