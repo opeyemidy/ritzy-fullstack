@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const db = require('./models')
-const PORT = process.env.PORT || 3000
 
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
@@ -22,6 +21,9 @@ if (process.env.NODE_ENV === 'production') {
   //Handle SPA
   app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'))
 }
+
+const PORT = process.env.PORT || 3000
+
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(`listening at: http://localhost:${PORT}`)
