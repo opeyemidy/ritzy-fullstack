@@ -32,4 +32,25 @@ router.get('/all', (req, res) => {
   })
 })
 
+router.get('/find/:id', (req, res) => {
+  db.Product.findAll({
+    where: { id: req.params.id },
+    include: [db.Specification],
+  }).then((oneProduct) => {
+    oneProduct.forEach((product) => {
+      if (product.size) {
+        let sizeArray = product.size.split(',')
+        product.size = sizeArray
+      }
+      let imageArray = product.images.split(',')
+      product.images = imageArray
+      product.Specifications.forEach((item) => {
+        let listArray = item.list.split(',')
+        item.list = listArray
+      })
+    })
+    res.send(oneProduct)
+  })
+})
+
 module.exports = router
